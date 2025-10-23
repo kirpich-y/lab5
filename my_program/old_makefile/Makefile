@@ -7,11 +7,11 @@ all: my_app
 my_app: src/main.o src/my_lib.o
 	$(CC) src/main.o src/my_lib.o -o my_app
 
-src/main.o: src/main.c
+src/main.o: src/main.c include/my_lib.h
 	$(CC) $(CFLAGS) -c src/main.c -o src/main.o
 
 
-src/my_lib.o: src/my_lib.c 
+src/my_lib.o: src/my_lib.c include/my_lib.h
 	$(CC) $(CFLAGS) -c src/my_lib.c -o src/my_lib.o
 
 clean:
